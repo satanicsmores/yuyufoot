@@ -1,0 +1,92 @@
+h1 {
+    margin: 0px 0px;
+}
+
+p {
+    margin: 0px 0px;
+    color: red;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 0px 0px;
+}
+
+.centerbox {
+    padding: 200px 0;
+    text-align: center;
+}
+
+.common_font {
+    font-size: 14px;
+}
+
+.index {
+
+}
+
+#title{
+    text-align: center;
+    color: red;
+}
+
+.index .top {
+
+}
+
+.index .right {
+    position: absolute;
+    top: 0px;
+    margin: 18px;
+    right: 0px;
+    display: none;
+}
+
+.index .catalog {
+    overflow: auto;
+
+}
+
+.index .content #button {
+    font-size: 23px;
+
+}
+
+#sin_content{
+    display: inline-block;
+    width: 480px;
+    height: 580px;
+}
+
+ul {
+    margin: 0px 0px;
+}
+
+.catalog li {
+    float: left;
+    width: 70px;
+    cursor: pointer;
+    font-size: 24px;
+    color: red;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: Blue;
+}
+
+.nowpage {
+    font-size: 25px;
+}
+
+.page {
+    overflow: hidden;
+    font-size: 25px;
+}
+
+#nowp{
+    text-align: center;
+}
+
+
+

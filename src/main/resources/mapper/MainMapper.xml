@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="yuyu.lovefoot.foot.dao.MainDao">
+
+    <!--获得所有菜单目录-->
+    <select id="getMenu" resultType="Menu">
+        SELECT
+         id
+         ,menu_name AS menuName
+         FROM menu
+    </select>
+
+    <!--获得菜单视频，如果menuid为0,，则返回所有视频,如需要指定video，则传入videoid-->
+    <select id="getVideo" resultType="Video">
+        SELECT
+        id
+        ,menu_id AS menuId
+        ,video_name AS videoName
+        ,video_describe AS videoDescribe
+        ,video_pic_url AS videoPicUrl
+        ,video_price AS videoPrice
+        FROM video
+        <where>
+            <if test="menuId != 0 and menuId != null and menuId != ''">
+                menu_id=#{menuId}
+            </if>
+        </where>
+    </select>
+
+    <!--获得单个视频一些信息,传入videoid-->
+    <select id="getSinVideo" resultType="Video">
+        SELECT
+        id
+        ,menu_id AS menuId
+        ,video_name AS videoName
+        ,video_describe AS videoDescribe
+        ,video_pic_url AS videoPicUrl
+        ,video_price AS videoPrice
+        FROM video
+        <where>
+            <if test="videoId != 0 and videoId != null and videoId != ''">
+                id=#{videoId}
+            </if>
+        </where>
+    </select>
+
+    <!--//获取单个视频图片信息-->
+    <select id="getPicture" resultType="Picture">
+        SELECT
+        id
+        ,video_id AS videoId
+        ,picture_url AS pictureUrl
+        FROM picture
+        WHERE video_id=#{videoId}
+    </select>
+
+    <!--获得单个视频,传入videoid,获取视频下载链接的接口-->
+    <select id="getSinVideoUrl" resultType="Video">
+        SELECT
+        id
+        ,video_url AS videoUrl
+        ,video_tiquma AS videoTiquma
+        ,video_code AS videoCode
+        FROM video
+        <where>
+            <if test="videoId != 0 and videoId != null and videoId != ''">
+                id=#{videoId}
+            </if>
+        </where>
+    </select>
+
+</mapper>
